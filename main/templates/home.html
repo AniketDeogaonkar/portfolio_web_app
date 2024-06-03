@@ -1,0 +1,15 @@
+{% extends 'base.html'%} {% load static %} {% block title %} Home Page
+{%endblock title %} {% block extrahead %}
+<link rel="stylesheet" href="{% static 'CSS/home.css'%}" />
+{% endblock extrahead %} {% block content %}
+<div class="filters">
+  <input type="text" id="name-search" placeholder="Search by name..." />
+  <div class="tag-list">
+    {% for tag in tags %}
+    <button class="tag" data-tag="{{tag.name|lower}}">{{tag.name}}</button>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %} {% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock extra_js %}
